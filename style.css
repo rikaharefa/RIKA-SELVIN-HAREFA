@@ -1,0 +1,208 @@
+body{
+	background-color: #CDFADB;
+}
+
+h2{
+	color: #561C24;
+	text-align: center;
+}
+
+.tengah{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 200px;
+}
+
+.tengah:hover{
+	transform: scale(1.2);
+}
+
+.section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} 
+
+#menu{
+	padding: 0;
+}
+
+#menu li{
+	display: inline;
+}
+
+#menu a{
+	background-color: wheat;
+	color: black;
+	padding: 8px 10px;
+	text-decoration: none;
+	border-radius: 4px 4px 1px 2px;
+}
+
+#menu li a:hover{
+	background-color: red;
+}
+
+
+
+
+
+
+#animasi{
+	padding: 0;
+	margin: 0;
+	height: 75vh;
+	display: grid;
+	place-items: center;
+}
+
+
+
+.animasi{
+	height: 350px;
+	width: 350px;
+	position: relative;
+	animation: spin 1.5s infinite;
+}
+
+@keyframes spin{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.animasi>div:nth-child(1){
+	height: 75px;
+	width: 75px;
+	background-image: linear-gradient(45deg, #f7d000, #e6970e);
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	box-shadow: 0 0 3px #f7d000;
+	border-radius: 50%;
+	animation: move1 1.5s infinite;
+}
+
+
+@keyframes move1{
+	50%{
+		transform: translate(-30px, -30px) scale(0.3);
+	}
+}
+
+.animasi>div:nth-child(2){
+	height: 45px;
+	width: 45px;
+	background-image: linear-gradient(45deg, #00d7f7, #04c0f5);
+	position: absolute;
+	top: 150px;
+	right: 110px;
+	box-shadow: 0 0 2px #00d7f7;
+	border-radius: 50%;
+	animation: move2 1.5s infinite;
+}
+
+
+
+@keyframes move2{
+	50%{
+		transform: translate(15px, -20px) scale(0.55);
+	}
+}
+
+.animasi>div:nth-child(3){
+	height: 45px;
+	width: 45px;
+	background-image: linear-gradient(45deg, #f60180, #f7014f);
+	position: absolute;
+	bottom: 100px;
+	right: 100px;
+	box-shadow: 0 0 3px #f60180;
+	border-radius: 50%;
+	animation: move3 1.5s infinite;
+}
+
+
+@keyframes move3{
+	50%{
+		transform: translate(30px, 30px) scale(0.3);
+	}
+}
+
+.animasi>div:nth-child(4){
+	height: 45px;
+	width: 45px;
+	background-image: linear-gradient(45deg, #da00f7, #b501f6);
+	position: absolute;
+	bottom: 105px;
+	left: 110px;
+	box-shadow: 0 0 3px #da00f7;
+	border-radius: 50%;
+	animation: move4 1.5s infinite;
+}
+
+
+@keyframes move4{
+	50%{
+		transform: translate(-30px, -30px) scale(0.3);
+	}
+
+}
+
+p{
+	color: #6C22A6;
+	width: 30px;
+
+}
+
+
+/*CSS GALERY FOTO*/
+
+.grid{
+	/*mengatur ukuran kolom dan baris, spasi/jarak antar gambar(grip-gap), membuat berbentuk horizontal*/
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+	margin: 0px;
+	align-items: center;
+	grid-gap: 30px;
+}
+
+img{
+	/* menyesuaikan ukuran gambar, membuat tidak blur lagi	*/
+	object-fit: cover; 
+}
+
+.grid > img{
+	/*mengatur sudut gambar, contohnya sudutnya jadi cekung	*/
+	border-top-left-radius: 25px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 30px;
+}
+
+
+	
+.grid > img:hover{
+/* fungsi hover:membuat kayak link/membuat efek animasi, bisa di klik, di klik bisa bergerak/mengubah transisi foto. berikut contoh transisinya*/
+
+		transform: rotate(15deg)
+	/*	transform: scale(0,5)*/
+/*	transform: scale(1,2)*/
+	/*transform: translate(50px)*/
+}
+
+
+/*/* menyesuaikan perubahan tampilan dari browser, membuat tampilan website jadi responsive. menggunakan @media*/
+@media (max-width:1000px){
+	.grid{
+		grid-template-columns: repeat(2, 1fr);
+}
+@media(max-width:800px){
+	.grid{
+		grid-template-columns: repeat(1 1fr);
+	}
+}
+
+
+
